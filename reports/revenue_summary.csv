@@ -1,0 +1,3 @@
+experiment_group,users,total_revenue,revenue_per_user,median_revenue_per_user,avg_purchase_count
+control,24904,414650.57,16.64995864118214,0.0,0.44133472534532603
+treatment,25096,478976.15,19.085756694293913,0.0,0.5133487408351929

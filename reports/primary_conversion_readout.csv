@@ -1,0 +1,2 @@
+control_conversion,treatment_conversion,absolute_lift_pp,relative_lift_pct,ci_95_low_pp,ci_95_high_pp,chi_square_p_value,control_users,treatment_users
+0.3369739800835207,0.38962384443736053,5.2649864353839835,15.624311509390221,4.423152269254984,6.106820601512983,2.174306797919547e-34,24904,25096

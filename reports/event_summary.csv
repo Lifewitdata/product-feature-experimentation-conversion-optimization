@@ -1,0 +1,8 @@
+event_name,event_count,unique_users
+app_open,83291,50000
+product_view,83220,50000
+checkout_started,34372,34372
+feature_clicked,33591,24532
+payment_attempted,25558,25558
+purchase_completed,18170,18170
+one_tap_feature_view,15162,15162
