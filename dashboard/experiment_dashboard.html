@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Checkout Experiment Dashboard</title>
+<style>body{font-family:Arial,sans-serif;max-width:1100px;margin:32px auto;padding:0 20px;color:#222}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{border:1px solid #ddd;border-radius:12px;padding:18px}.label{color:#666;font-size:13px}.value{font-size:26px;font-weight:700;margin-top:8px}table{border-collapse:collapse;width:100%;margin-top:20px}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left}.note{background:#fff6df;padding:14px;border-radius:8px;margin:18px 0}</style></head><body>
+<h1>One-Tap Checkout Experiment</h1><p>Product analytics scorecard · Synthetic experiment data</p>
+<div class="note"><b>Simulation notice:</b> This dashboard uses synthetic data with a deliberately simulated treatment effect. Do not treat it as real product evidence.</div>
+<div class="cards">
+<div class="card"><div class="label">Control conversion</div><div class="value">33.70%</div></div>
+<div class="card"><div class="label">Treatment conversion</div><div class="value">38.96%</div></div>
+<div class="card"><div class="label">Absolute lift</div><div class="value">5.26 pp</div></div>
+<div class="card"><div class="label">Chi-square p-value</div><div class="value">2.17e-34</div></div></div>
+<h2>Group KPI scorecard</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>experiment_group</th>
+      <th>assigned_users</th>
+      <th>checkout_start_rate</th>
+      <th>payment_attempt_rate</th>
+      <th>conversion_rate</th>
+      <th>revenue_per_user</th>
+      <th>payment_failure_rate</th>
+      <th>support_contact_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>control</td>
+      <td>24904</td>
+      <td>66.162%</td>
+      <td>48.277%</td>
+      <td>33.697%</td>
+      <td>16.65</td>
+      <td>3.714%</td>
+      <td>3.493%</td>
+    </tr>
+    <tr>
+      <td>treatment</td>
+      <td>25096</td>
+      <td>71.306%</td>
+      <td>53.933%</td>
+      <td>38.962%</td>
+      <td>19.09</td>
+      <td>3.706%</td>
+      <td>3.630%</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Conversion uncertainty</h2><p>95% confidence interval for absolute lift: 4.42 to 6.11 percentage points.</p>
+<h2>Funnel reach</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>checkout_started</th>
+      <th>payment_attempted</th>
+      <th>payment_completed</th>
+    </tr>
+    <tr>
+      <th>experiment_group</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>control</th>
+      <td>66.16%</td>
+      <td>48.28%</td>
+      <td>33.70%</td>
+    </tr>
+    <tr>
+      <th>treatment</th>
+      <td>71.31%</td>
+      <td>53.93%</td>
+      <td>38.96%</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Guardrail comparison</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>control</th>
+      <th>treatment</th>
+      <th>difference_pp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>payment_failure_rate</td>
+      <td>3.714%</td>
+      <td>3.706%</td>
+      <td>-0.849%</td>
+    </tr>
+    <tr>
+      <td>support_contact_rate</td>
+      <td>3.493%</td>
+      <td>3.630%</td>
+      <td>13.665%</td>
+    </tr>
+  </tbody>
+</table>
+<p>Supporting CSV tables are available in the <code>reports/</code> directory.</p></body></html>
