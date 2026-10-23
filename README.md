@@ -18,7 +18,7 @@ product-feature-experimentation/
 ├── data/                  # four synthetic CSVs
 ├── notebooks/             # analyst-style end-to-end notebook
 ├── sql/                   # BigQuery Standard SQL templates
-├── dashboard/             # dashboard planning / exports
+├── dashboard/             # Streamlit scorecard + its tests
 ├── reports/               # generated summary CSVs
 ├── src/                   # optional reusable scripts
 ├── README.md
@@ -34,6 +34,26 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 Open `notebooks/product_feature_experimentation.ipynb` and run all cells from top to bottom.
+
+### Dashboard
+`dashboard/streamlit_app.py` renders the readout as a Streamlit app. It reads the
+generated CSVs in `reports/` rather than repeating the analysis, so it stays in
+step with whatever the notebook last wrote.
+
+```bash
+streamlit run dashboard/streamlit_app.py
+python -m pytest dashboard/test_app.py -q   # 5 headless AppTest checks
+```
+
+Shows the four headline figures (control 33.70%, treatment 38.96%, absolute lift
++5.26 pp, chi-square p-value 2.17e-34), the 95% CI for the lift, funnel reach as
+a chart or a table, the two guardrails, and the group KPI scorecard.
+
+Note on `difference_pp`: `reports/guardrail_summary.csv` already stores that
+column in percentage points while `control` and `treatment` are proportions. A
+blanket percent format over all three columns inflates the difference by 100x —
+`-0.008 pp` displays as `-0.849%`. The dashboard scales only the two proportion
+columns and leaves `difference_pp` alone.
 
 ### Main analysis
 Data quality and grain validation; sample-ratio mismatch diagnostic; user-level KPI scorecard; conversion difference with 95% confidence interval and chi-square test; funnel reach and stage conversion; guardrail metrics; segment cuts; revenue and event analysis; dashboard-ready exports.
