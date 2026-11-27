@@ -60,6 +60,8 @@ jupyter notebook
 Open `notebooks/product_feature_experimentation.ipynb` and run all cells from top to bottom.
 
 ### Dashboard
+**[Open the live Streamlit dashboard](https://appuct-feature-experimentation-conversion-optimization-gj62mvx.streamlit.app/)**
+
 `dashboard/streamlit_app.py` renders the readout as a Streamlit app. It reads the
 generated CSVs in `reports/` rather than repeating the analysis, so it stays in
 step with whatever the notebook last wrote.
